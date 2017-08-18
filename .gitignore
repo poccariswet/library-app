@@ -18,3 +18,4 @@ test/
 .eslintignore
 .eslintrc.js
 .postcssrc.js
+package-lock.json
