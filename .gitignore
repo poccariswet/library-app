@@ -14,3 +14,7 @@ test/
 *.ntvs*
 *.njsproj
 *.sln
+.editorconfig
+.eslintignore
+.eslintrc.js
+.postcssrc.js
