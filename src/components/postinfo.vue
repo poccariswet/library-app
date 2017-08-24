@@ -26,6 +26,11 @@
         <div class="form-group">
           <el-switch on-text="可" off-text="不可" v-model="state"></el-switch>
         </div>
+        <div class="marginTop"></div>
+        <div class="form-group">
+          <label for="pic"></label>
+          <el-input id="pic" type="text" placeholder="Address of Picture" v-model="pic" name="pic"></el-input>
+        </div>
       </div>
     </div>
     <div class="marginTop"></div>
@@ -57,6 +62,7 @@ export default {
       author: '',
       isbn13: '',
       state: false,
+      pic: '',
       Info: 'Book Edit',
       Info2: '本の情報を入力してください',
       StateInfo: '貸し出し状況',
@@ -69,6 +75,7 @@ export default {
       this.author = ''
       this.isbn13 = ''
       this.state = false
+      this.pic = ''
       this.$router.push({ name: 'home' })
     },
     clear () {
@@ -76,6 +83,7 @@ export default {
       this.author = ''
       this.isbn13 = ''
       this.state = false
+      this.pic = ''
     },
     post () {
       request
@@ -93,6 +101,7 @@ export default {
       obj.Author = this.author
       obj.Isbn13 = this.isbn13
       obj.State = this.state
+      obj.Pic = this.pic
       console.log(JSON.stringify(obj))
       return obj
     },
