@@ -13,6 +13,7 @@ type Book struct {
 	Author string `db:"author"`
 	Isbn13 string `db:"isbn13"`
 	State  bool   `db:"state"`
+	Pic    string `db:"pic"`
 }
 
 func Pull_Book_Info(c echo.Context) error {
@@ -36,7 +37,7 @@ func Update_Book_Info(c echo.Context) error {
 		return err
 	}
 
-	attrsMap := map[string]interface{}{"id": book.Id, "title": book.Title, "Author": book.Author, "isbn13": book.Isbn13, "state": book.State}
+	attrsMap := map[string]interface{}{"id": book.Id, "title": book.Title, "author": book.Author, "isbn13": book.Isbn13, "state": book.State, "pic": book.Pic}
 	sess.Update(tablename).SetMap(attrsMap).Where("id = ?", book.Id).Exec()
 
 	return c.NoContent(http.StatusOK)
@@ -48,7 +49,7 @@ func Post_Book_Info(c echo.Context) error {
 		return err
 	}
 
-	sess.InsertInto(tablename).Columns("title", "author", "isbn13", "state").Values(book.Title, book.Author, book.Isbn13, book.State).Exec()
+	sess.InsertInto(tablename).Columns("title", "author", "isbn13", "state", "pic").Values(book.Title, book.Author, book.Isbn13, book.State, book.Pic).Exec()
 
 	return c.NoContent(http.StatusOK)
 }
