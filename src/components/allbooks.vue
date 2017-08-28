@@ -1,18 +1,20 @@
 <template>
   <div id="allbooks">
     <h1>{{ Info }}</h1>
-      <div class="bar">
-        <el-input type="text" v-model="searchString" placeholder="Enter your search book" icon="search" />
-      </div>
-      <div class="block">
-        <ul v-for="book in filteredBooks">
-          <img v-bind:src="book.Pic">
-          <p>{{book.Title}}</p>
+    <div class="bar">
+      <el-input type="text" v-model="searchString" placeholder="Enter your search book" icon="search" />
+    </div>
+    <div class="block">
+      <ul v-for="book in filteredBooks" @click="goto(book.Id)">
+        <img v-bind:src="book.Pic">
+        <p>{{book.Title}}</p>
       </ul>
       <!-- <#pagenation>-->
     </div>
-    <el-button type="primary" @click="push">ホームへ</el-button>
-    <el-button type="primary" @click="push_PostInfo">本の追加へ</el-button>
+    <div class="button">
+      <el-button type="primary" @click="push_home">ホームへ</el-button>
+      <el-button type="primary" @click="push_PostInfo">本の追加へ</el-button>
+    </div>
   </div>
 </template>
 
@@ -43,7 +45,7 @@ export default {
     this.call()
   },
   methods: {
-    push () {
+    push_home () {
       this.$router.push({ name: 'home' })
     },
     push_PostInfo () {
@@ -58,6 +60,8 @@ export default {
       .then(d => {
         this.Books = d.body
       })
+    },
+    goto (id) {
     }
   },
   computed: {
@@ -90,7 +94,7 @@ export default {
   text-align: center;
   margin-top: 10px;
 }
-/*topの色*/
+
 h1 {
   color: #6495ED;
 }
@@ -119,11 +123,12 @@ p:hover{
   color: #FF6347;
   cursor: pointer;
 }
+
 </style>
 
 <!--
 <el-pagination
-  layout="prev, pager, next"
-  :total="this.ItemSize">
+layout="prev, pager, next"
+:total="this.ItemSize">
 </el-pagination>
- -->
+-->
