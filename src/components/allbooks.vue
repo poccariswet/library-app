@@ -61,7 +61,8 @@ export default {
         this.Books = d.body
       })
     },
-    goto (id) {
+    goto (_id) {
+      this.$router.push({ name: 'getinfo', params: {id: _id} })
     }
   },
   computed: {
