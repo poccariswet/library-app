@@ -76,7 +76,7 @@ export default {
       this.isbn13 = ''
       this.state = false
       this.pic = ''
-      this.$router.push({ name: 'home' })
+      this.push_home()
     },
     clear () {
       this.title = ''
@@ -130,6 +130,9 @@ export default {
         this.visible2 = false
       }
     },
+    push_home () {
+      this.$router.push({name: 'home'})
+    },
     confirm () {
       if (this.formCheck()) {
         this.alertMessage()
@@ -138,7 +141,7 @@ export default {
       }
       this.storage()
       _.debounce(() => {
-        this.$router.push({ name: 'home' })
+        this.push_home()
       }, 1250)
       this.$message({
         message: '保存しました',
