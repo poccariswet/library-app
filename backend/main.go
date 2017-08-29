@@ -18,7 +18,7 @@ func main() {
 
 	e.Use(middleware.CORS())
 	// Routing
-	e.GET("/book/pullbookinfo/:id", Pull_Book_Info)
+	e.GET("/book/pullbookinfo/:title", Pull_Book_Info)
 	e.GET("/book/pullbooksinfo/all", Pull_Books_Info)
 	e.PUT("/book/updatebookinfo", Update_Book_Info)
 	e.POST("/book/postbookinfo", Post_Book_Info)

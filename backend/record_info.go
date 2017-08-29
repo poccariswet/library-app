@@ -18,8 +18,9 @@ type Book struct {
 
 func Pull_Book_Info(c echo.Context) error {
 	var book Book
-	id, _ := strconv.Atoi(c.Param("id"))
-	sess.Select("*").From(tablename).Where("id = ?", id).Load(&book)
+	//	id, _ := strconv.Atoi(c.Param("id"))
+	title := c.Param("title")
+	sess.Select("*").From(tablename).Where("title = ?", title).Load(&book)
 
 	return c.JSON(http.StatusOK, book)
 }
