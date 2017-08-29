@@ -93,7 +93,7 @@ export default {
     },
     call () {
       Q.fcall(() => {
-        return Utils.request2(`http://localhost:9090/book/pullbookinfo/${this.$route.params.id}`)
+        return Utils.request2(`http://localhost:9090/book/pullbookinfo/${this.$route.params.title}`)
       })
       .then(d => {
         console.log(JSON.stringify(d.body))

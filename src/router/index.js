@@ -19,7 +19,7 @@ export default new Router({
       component: AllBooks
     },
     {
-      path: '/book/pullbookinfo/:id',
+      path: '/book/pullbookinfo/:title',
       name: 'getinfo',
       component: GetInfo
     },

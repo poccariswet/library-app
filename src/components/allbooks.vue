@@ -5,7 +5,7 @@
       <el-input type="text" v-model="searchString" placeholder="Enter your search book" icon="search" />
     </div>
     <div class="block">
-      <ul v-for="book in filteredBooks" @click="goto(book.Id)">
+      <ul v-for="book in filteredBooks" @click="goto(book.Title)">
         <img v-bind:src="book.Pic">
         <p>{{book.Title}}</p>
       </ul>
@@ -61,8 +61,8 @@ export default {
         this.Books = d.body
       })
     },
-    goto (_id) {
-      this.$router.push({ name: 'getinfo', params: {id: _id} })
+    goto (_title) {
+      this.$router.push({ name: 'getinfo', params: {title: _title} })
     }
   },
   computed: {
