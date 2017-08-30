@@ -44,7 +44,7 @@ $ go get github.com/labstack/echo
 ## Starting of this app
 
 ```sh
-$ pwd library-api
+$ pwd $HOME/library-api
 $ npm run dev
 $ cd .backend
 $ ./backend
