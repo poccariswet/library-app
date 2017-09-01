@@ -8,7 +8,7 @@
 
 ## Description
 
-You can search state you want to borrow from library using interface of LINE. 
+You can search state you want to borrow from library using interface of LINE.
 like this...
 
 ![line_sample](./.pic/line_sample.png)
@@ -26,6 +26,10 @@ like this...
 
 ## Installation
 You need install this libraries
+
+```sh
+$ npm install --save element-ui
+```
 
 ```sh
 $ go get github.com/line/line-bot-sdk-go
