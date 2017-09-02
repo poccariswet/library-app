@@ -17,6 +17,7 @@
     <div class="marginTop"></div>
     <el-button type="danger" @click="push_AllBooks">戻る</el-button>
     <el-button type="success" @click="dialogEdit = true">編集</el-button>
+    <el-button @click="push_home()">ホームへ</el-button>
 
     <!-- MODAL -->
     <el-dialog
@@ -90,6 +91,9 @@ export default {
     },
     push_AllBooks () {
       this.$router.push({ name: 'allbooks' })
+    },
+    push_home () {
+      this.$router.push({ name: 'home' })
     },
     call () {
       Q.fcall(() => {
