@@ -1,7 +1,7 @@
 <template>
   <div id="postinfo">
     <h1>{{Info}}</h1>
-    <el-form :model="bookData" :rules="rules" ref="bookData" label-width="120px" class="postinfo">
+    <el-form :model="bookData" :rules="rules" ref="bookData" label-width="100px" class="postinfo">
       <h2>{{Info2}}</h2>
       <el-form-item label="Title" prop="title">
         <el-input v-model="bookData.title" placeholder="book title"></el-input>
