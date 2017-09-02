@@ -9,7 +9,6 @@
         <img v-bind:src="book.Pic">
         <p>{{book.Title}}</p>
       </ul>
-      <!-- <#pagenation>-->
     </div>
     <div class="button">
       <el-button type="primary" @click="push_home">ホームへ</el-button>
@@ -26,8 +25,6 @@ export default {
     return {
       Info: 'AllBooksInfo',
       searchString: '',
-      // page: 0,
-      // ItemSize: 100,
       Books: [
         {
           Id: '',
@@ -96,6 +93,10 @@ export default {
   margin-top: 10px;
 }
 
+.button{
+  margin-top: 5%;
+}
+
 h1 {
   color: #6495ED;
 }
@@ -126,10 +127,3 @@ p:hover{
 }
 
 </style>
-
-<!--
-<el-pagination
-layout="prev, pager, next"
-:total="this.ItemSize">
-</el-pagination>
--->
