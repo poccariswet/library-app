@@ -13,7 +13,7 @@
 export default {
   data () {
     return {
-      title: 'Home'
+      title: 'Library-API'
     }
   },
   methods: {
