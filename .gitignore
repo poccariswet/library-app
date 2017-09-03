@@ -19,3 +19,4 @@ test/
 .eslintrc.js
 .postcssrc.js
 package-lock.json
+backend/vendor/
