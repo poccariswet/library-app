@@ -96,21 +96,22 @@ export default {
       this.$router.push({name: 'home'})
     },
     confirm (formData) {
-      this.$refs[formData].validate((valid) => {
-        if (valid === false) {
-          console.log('error submit!!')
-          return false
+      if (
+        this.bookData.title !== '' && this.bookData.author !== '' && this.bookData.isbn13.length === 13
+      ) {
+        if (this.bookData.pic === '') {
+          this.bookData.pic = 'http://cdn.tsutaya.tsite.jp/static/tsite_common/images/noimage.png'
         }
-      })
-      this.store()
-      _.debounce(() => {
-        this.push_home()
-      }, 1250)
-      this.$message({
-        message: '保存しました',
-        type: 'success'
-      })
-      this.resetForm()
+        this.store()
+        _.debounce(() => {
+          this.push_home()
+        }, 1250)
+        this.$message({
+          message: '保存しました',
+          type: 'success'
+        })
+        this.resetForm()
+      }
     },
     store () {
       this.post()
