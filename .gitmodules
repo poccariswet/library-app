@@ -1,0 +1,3 @@
+[submodule "library-app-backend"]
+	path = library-app-backend
+	url = git@github.com:soeyusuke/library-app-backend.git
