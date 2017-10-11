@@ -1,7 +1,0 @@
-package: github.com/soeyusuke/library-api/backend
-import:
-- package: github.com/go-sql-driver/mysql
-- package: github.com/gocraft/dbr
-- package: github.com/labstack/echo
-  subpackages:
-  - middleware
