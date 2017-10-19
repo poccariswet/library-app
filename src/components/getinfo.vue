@@ -97,7 +97,7 @@ export default {
     },
     call () {
       Q.fcall(() => {
-        return Utils.request2(`http://localhost:9090/book/pullbookinfo/${this.$route.params.title}`)
+        return Utils.request2(`http://localhost:9090/book/api/get/${this.$route.params.title}`)
       })
       .then(d => {
         console.log(JSON.stringify(d.body))
@@ -108,7 +108,7 @@ export default {
     },
     put (_obj) {
       request
-      .put('http://localhost:9090/book/updatebookinfo')
+      .put('http://localhost:9090/book/api/update')
       .set('Content-Type', 'application/json')
       .send(_obj)
       .end((err, res) => {

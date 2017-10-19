@@ -52,7 +52,7 @@ export default {
     },
     call () {
       Q.fcall(() => {
-        return Utils.request2('http://localhost:9090/book/pullbooksinfo/all')
+        return Utils.request2('http://localhost:9090/book/api/get/all')
       })
       .then(d => {
         this.Books = d.body

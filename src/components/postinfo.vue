@@ -74,7 +74,7 @@ export default {
     },
     post () {
       request
-      .post('http://localhost:9090/book/postbookinfo')
+      .post('http://localhost:9090/book/api/post')
       .set('Content-Type', 'application/json')
       .send(this.set())
       .end((err, res) => {
