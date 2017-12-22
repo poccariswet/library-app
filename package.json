@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
-    "element-ui": "^1.4.2",
+    "element-ui": "^1.4.12",
     "lodash": "^4.17.4",
     "superagent": "^3.5.2",
     "vue": "^2.3.3",
